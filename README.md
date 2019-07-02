@@ -12,6 +12,7 @@
     <hr>
     <div id="app">
         <div v-if='islogin'Hi!></div>
+        <div v-else>请登录</div>
     </div>
 
     <script type="text/javascript">
