@@ -1,4 +1,3 @@
-# Vue-play
 <!DOCTYPE html>
 <html lang="en">
 <head>
