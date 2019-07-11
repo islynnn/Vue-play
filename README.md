@@ -1,17 +1,26 @@
-# Vue-play
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>hello world</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue.js实例</hl></title>
+    <script type="text/javascript" src="../asset/js/vue.js"></script>
 </head>
 <body>
-    <h1>Vue2.0实例</h1>
+    <h1>Hello World</h1>
     <hr>
-    <ol>
-         <li><a herf="#">Hello World 实例</a></li>
-    </ol>
+    <div id="app">
+        {{message}}
+    </div>
+    <hr>
+
+    <script type="text/javascript">
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:'hello world'
+            }
+        })
+    </script>
 </body>
 </html>
