@@ -18,7 +18,7 @@
         var app = new Vue ({
             el:"#app",
             data:{
-                islogin=false           
+                islogin:false           
              }
         })
             
