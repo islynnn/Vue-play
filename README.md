@@ -12,7 +12,7 @@
         <div v-pre>{{message}}</div>
         <div v-cloak>message</div><!--dom渲染完成才显示内容-->
         <div v-once>{{message}}</div>
-        <div><input type="text" id="message"></div>
+        <div><input type="text" v-model="message"></div>
         <div>{{message}}</div>
     </div>
 
