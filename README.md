@@ -38,6 +38,7 @@
         <label for="one">女</label>
         <input type="radio" id="two" value="男" v-model="sex">
         <label for="two">男</label>
+        <p>你选择的性别是：{{sex}}</p>
     </div>
 
     <script type="text/javascript">
@@ -46,7 +47,8 @@
             data:{
                 message:"hello world!!!!!",
                 isTrue:true,
-                Web_name:[]
+                Web_name:[],
+                sex:'女'
             }
         })
             
