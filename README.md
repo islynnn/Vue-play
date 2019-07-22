@@ -12,14 +12,32 @@
         <div v-Lynn="color">{{num}}</div>
         <p><button @click="add">ADD</button></p>
     </div>
+    <p>
+        <button onclick="unbind()">解绑</button>
+    </p>
 
     <script type="text/javascript">
+    function unbind(){
+        app.$destroy();
+    }
       //下定义时Vue.directive一定要首字母大写！！！
-    Vue.directive("Lynn",function(el,binding){  //此处function一般用到三种参数：el\binding\vnode
-        console.log(el); //el对应上面Dom定义的元素，本例是color
-        console.log(binding);//binding是对象，具有多种属性
-        console.log(binding.name);//自定义指令的名称
-        el.style="color:"+binding.value;//el.style是原生写法，color的值通过binding.value和下面的color值绑定
+    Vue.directive("Lynn",{
+        bind:function(el,binding){//被绑定
+        console.log('1 - bind');
+        el.style="color"+binding.value;
+        },
+        inserted:function(){//绑定节点
+        console.log('2 - inserted');
+        },
+        update:function(){//组件更新
+        console.log('3 - update');
+        },
+        componentUpdate:function(){//组件更新完成
+        console.log('4 - componentUpdate');
+        },
+        unbind:function(){//解绑
+        console.log('5 - unbind');
+        },
     });
 
         var app = new Vue ({
