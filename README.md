@@ -24,7 +24,7 @@
     Vue.directive("Lynn",{
         bind:function(el,binding){//被绑定
         console.log('1 - bind');
-        el.style="color"+binding.value;
+        el.style="color:"+binding.value;
         },
         inserted:function(){//绑定节点
         console.log('2 - inserted');
