@@ -19,7 +19,7 @@
          </template>
     <hr>
     -->
-    <!--第三种方法：用script写-->
+    <!--第三种方法：用script标签，好处是可以在script标签里通过src引入外部模板-->
     <script type="x-template" id="model">
         <h1 style="color:orange">Model</h1>
     </script>
@@ -35,7 +35,7 @@
             //template:`  
             //<h1 style="color:orange">模板选项</h1>
             //,
-            //template:"#demo2",
+            template:"#model",
         })
             
     </script>
