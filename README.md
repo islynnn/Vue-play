@@ -14,20 +14,23 @@
    
 
     <script type="text/javascript">
-    //var bbb={
-        //template:'<div>Lucas</div>'}
-    Vue.component ("bbb",{
-        template:`<div style="color:blue">Lucas</div>`})
-    Vue.component('aaa',{
-        template:`<div style="color:orange">
-        <p>Zeus</p>
-        <hr>
-        <bbb></bbb>
-        <hr>
-        </div>`
-    })
+    var ccc = {
+        template:'<div style="color:blue;">Zeus</div>',
+    }
+    var aaa = {
+        template:`<div style="color:orange;">
+        <p>Lucas</p>
+        <ccc></ccc>
+        </div>`,
+        components:{
+            "ccc":ccc
+        }
+    }
         var app = new Vue ({
             el:"#app",
+            components:{
+                "aaa":aaa
+            }
         })
     </script>
 </body>
