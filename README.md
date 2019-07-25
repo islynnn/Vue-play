@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript" src="Vue.js"></script>
-    <title>组件1</title>
+    <title>组件3</title>
 </head>
 <body>
     <h1>vue~component</h1>
     <hr>
     <div id="app">
-       <aaa v-bind:here="message"></aaa>
-       <hr>
-       <bbb from-here="Lucas"></bbb>
+       <aaa></aaa>
     </div>
    
 
     <script type="text/javascript">
-    //注册全局组件
+    //var bbb={
+        //template:'<div>Lucas</div>'}
+    Vue.component ("bbb",{
+        template:`<div style="color:blue">Lucas</div>`})
     Vue.component('aaa',{
-        template:`<div style="color:orange">component-1 from {{here}}</div>`,
-        props:['here']
+        template:`<div style="color:orange">
+        <p>Zeus</p>
+        <hr>
+        <bbb></bbb>
+        <hr>
+        </div>`
     })
         var app = new Vue ({
             el:"#app",
-            data:{
-                message:"Zeus"
-            },
-            components:{
-            "bbb":{
-                template:`<div style="color:blue;">component-2 from {{fromHere}}</div>`,
-                props:['fromHere'],
-                }
-            }
         })
     </script>
 </body>
