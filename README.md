@@ -9,9 +9,9 @@
     <h1>vue~component</h1>
     <hr>
     <div id="app">
-       <aaa here="Zeus"></aaa>
+       <aaa v-bind:here="message"></aaa>
        <hr>
-       <bbb from-here="Lucis"></bbb>
+       <bbb from-here="Lucas"></bbb>
     </div>
    
 
@@ -23,6 +23,9 @@
     })
         var app = new Vue ({
             el:"#app",
+            data:{
+                message:"Zeus"
+            },
             components:{
             "bbb":{
                 template:`<div style="color:blue;">component-2 from {{fromHere}}</div>`,
