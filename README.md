@@ -6,41 +6,41 @@
     <title>组件4</title>
 </head>
 <body>
-    <h1>component标签</h1>
+    <h1>component4</h1>
     <hr>
     <div id="app">
         <component v-bind:is="who"></component>
         <button @click="author">author</button>
     </div>
-
+   
     <script type="text/javascript">
     var lynn={
-        template:`<div style="color:orange;">Lynn</div>`
+        template:`<div style="color:orange">Lynn</div>`
     }
     var zeus={
-        template:`<div style="color:blue;">Zeus</div>`
+        template:`<div style="color:blue">Zeus</div>`
     }
-    var luacs={
-        template:`<div style="color:green;">Lucas</div>`
+    var lucas={
+        template:`<div style="color:gray">Lucas</div>`
     }
-    var app=new Vue({
-        el:'#app',
-        data:{
-            who:'lynn'
-        },
-        components:{
-            "lynn":lynn,
-            "zeus":zeus,
-            "lucas":lucas,
-        },
-        methods:{
-            author:function(){
-                if(this.who=='lynn'){this.who='zeus';
-                }else if(this.who=='zeus'){this.who='lucas'
-                }else{this.who='lucas'}
+        var app = new Vue ({
+            el:"#app",
+            data:{
+                who:'lynn'
+            },
+            components:{
+                "lynn":lynn,
+                "zeus":zeus,
+                "lucas":lucas,
+            },
+            methods:{
+                author:function(){
+                    if(this.who=='lynn'){this.who='zeus'}
+                    else if(this.who=='zeus'){this.who='lucas'}
+                    else{this.who='lynn'}
+                }
             }
-        }
-    })
+        })
     </script>
 </body>
 </html>
