@@ -3,44 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript" src="Vue.js"></script>
-    <title>组件4</title>
+    <title>propsData Option</title>
 </head>
 <body>
-    <h1>component4</h1>
+    <h1>propsData Option</h1>
     <hr>
-    <div id="app">
-        <component v-bind:is="who"></component>
-        <button @click="author">author</button>
-    </div>
-   
+    <header></header>
+
     <script type="text/javascript">
-    var lynn={
-        template:`<div style="color:orange">Lynn</div>`
-    }
-    var zeus={
-        template:`<div style="color:blue">Zeus</div>`
-    }
-    var lucas={
-        template:`<div style="color:gray">Lucas</div>`
-    }
-        var app = new Vue ({
-            el:"#app",
-            data:{
-                who:'lynn'
-            },
-            components:{
-                "lynn":lynn,
-                "zeus":zeus,
-                "lucas":lucas,
-            },
-            methods:{
-                author:function(){
-                    if(this.who=='lynn'){this.who='zeus'}
-                    else if(this.who=='zeus'){this.who='lucas'}
-                    else{this.who='lynn'}
+    var header_a = Vue.extend({
+        template:`<P>{{message}}-{{a}}</p>`,
+            data:function(){
+                return{
+                    message:'lululu'
                 }
-            }
-        })
+            },
+            props:['a']
+    });
+    new header_a({
+        propsData:{
+            a:1
+        }
+    }).$mount('header')
     </script>
 </body>
 </html>
