@@ -2,43 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="./vue.js"></script>
-    <title>EXTEND</title>
+    <script type="text/javascript" src="Vue.js"></script>
+    <script type="text/javascript" src="./jquery-3.4.1.js"></script>
+    <title>EXAMPLE-1</title>
 </head>
 <body>
-    <h1>extend</h1>
+    <h1>example-1</h1>
+    <hr>
     <div id="app">
-        {{message}}
-        <br>
-        ${message}
-        <br>
-        <button @click="add">add</button>
+       {{message}}
     </div>
 
     <script type="text/javascript">
-        var bbb={
-            created:function(){
-                console.log('我是被扩展出来的')
-            },
-            methods:{
-                add:function(){
-                    console.log('我是被扩展出来的方法')
-                }
-            }
-        }
-        var app=new Vue({
+        var app = new Vue ({
             el:"#app",
             data:{
-                message:"1"
+                message:"hello world!!!!!"
+            },
+            //在Vue中使用Jquery
+            mounted:function(){
+                $('#app').html('我是Jquery');
             },
             methods:{
                 add:function(){
-                    console.log('我是原生的方法')
+                    console.log('调用了Add方法')
                 }
-            },
-            extends:bbb,
-            delimiters:['${','}']
+                
+            }
         })
+        //打印app对象，看里面都用了什么属性和方法
+        console.log(app);
+        app.add();  
     </script>
 </body>
 </html>
